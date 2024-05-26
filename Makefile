@@ -1,7 +1,9 @@
 install:
 	npm ci
-start:
+start_even:
 	node bin/brain-even.js
+start_calc:
+	node bin/brain-calc.js
  publish:
 	npm publish --dry-run
 lint:
