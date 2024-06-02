@@ -25,8 +25,8 @@ const evenGame = () => {
         let randomNumber = randomUserNumber();
         questionUser(randomNumber);
         let answerUser = index.answerUser();
-        let yesOrNo = parityCheck(randomNumber);
-        if (!index.winOrLoseMassage(answerUser, yesOrNo, name)) {
+        let rightAns = parityCheck(randomNumber);
+        if (!index.winOrLoseMassage(answerUser, rightAns, name)) {
             return false;
         }
     }

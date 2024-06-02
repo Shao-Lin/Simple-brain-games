@@ -14,34 +14,25 @@ function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || _typeof(obj) !== "object" && typeof obj !== "function") { return { "default": obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj["default"] = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
 
 var condition = function condition() {
-  console.log("Find the greatest common divisor of given numbers.");
+  console.log('Answer "yes" if the number is even, otherwise answer "no".');
+};
+
+var parityCheck = function parityCheck(randomNumber) {
+  var rigthAnswer = 0;
+  if (randomNumber % 2 === 0) rigthAnswer = "yes";else rigthAnswer = "no";
+  return rigthAnswer;
 };
 
 var randomUserNumber = function randomUserNumber() {
-  var randomNumber1 = Math.floor(Math.random() * 11);
-  var randomNumber2 = Math.floor(Math.random() * 11);
-  return [randomNumber1, randomNumber2];
+  var randomNumber = Math.floor(Math.random() * 101);
+  return randomNumber;
 };
 
 var questionUser = function questionUser(randomNumber) {
-  console.log("Question: " + randomNumber[0] + " " + randomNumber[1]);
+  console.log("Question: " + randomNumber);
 };
 
-var calculateNod = function calculateNod(randomNumber) {
-  var randomNumber1 = randomNumber[0];
-  var randomNumber2 = randomNumber[1];
-
-  while (randomNumber2 !== 0) {
-    var temp = randomNumber2;
-    randomNumber2 = randomNumber1 % randomNumber2;
-    randomNumber1 = temp;
-    randomNumber1 = randomNumber1.toString();
-  }
-
-  return randomNumber1;
-};
-
-var gcdGame = function gcdGame() {
+var evenGame = function evenGame() {
   var name = index.greeting();
   condition();
 
@@ -49,7 +40,7 @@ var gcdGame = function gcdGame() {
     var randomNumber = randomUserNumber();
     questionUser(randomNumber);
     var answerUser = index.answerUser();
-    var rightAns = calculateNod(randomNumber);
+    var rightAns = parityCheck(randomNumber);
 
     if (!index.winOrLoseMassage(answerUser, rightAns, name)) {
       return false;
@@ -59,5 +50,5 @@ var gcdGame = function gcdGame() {
   index.congratulations(name);
 };
 
-var _default = gcdGame;
+var _default = evenGame;
 exports["default"] = _default;
