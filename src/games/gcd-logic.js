@@ -3,8 +3,8 @@ const condition = () => {
     console.log("Find the greatest common divisor of given numbers.");
 };
 const randomUserNumber = () => {
-    let randomNumber1 = Math.floor(Math.random() * 11);
-    let randomNumber2 = Math.floor(Math.random() * 11);
+    let randomNumber1 = Math.floor(Math.random() * 101);
+    let randomNumber2 = Math.floor(Math.random() * 101);
     return [randomNumber1, randomNumber2];
 };
 const questionUser = (randomNumber) => {
