@@ -33,7 +33,7 @@ var randomUserNumber = function randomUserNumber() {
 };
 
 var questionUser = function questionUser(randomNumber) {
-  console.log("Question: " + randomNumber);
+  console.log("Question: ".concat(randomNumber.join(" ")));
 };
 
 var calculateHiddenNumber = function calculateHiddenNumber(arrayRandomNumbers) {

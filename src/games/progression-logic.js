@@ -15,7 +15,7 @@ const randomUserNumber = () => {
     return numberArray;
 };
 const questionUser = (randomNumber) => {
-    console.log("Question: " + randomNumber);
+    console.log(`Question: ${randomNumber.join(" ")}`);
 };
 const calculateHiddenNumber = (arrayRandomNumbers) => {
     let answer;
