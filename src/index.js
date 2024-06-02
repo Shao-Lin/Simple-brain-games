@@ -29,5 +29,5 @@ export const winOrLoseMassage = (userAnswer, rigthAnswer, name) => {
 };
 
 export const congratulations = (name) => {
-    console.log("Congratulations, " + name);
+    console.log("Congratulations, " + name + "!");
 };
