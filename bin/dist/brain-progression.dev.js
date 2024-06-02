@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 "use strict";
 
 var _progressionLogic = _interopRequireDefault(require("../src/games/progression-logic.js"));

@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 "use strict";
 
 var _gcdLogic = _interopRequireDefault(require("../src/games/gcd-logic.js"));
