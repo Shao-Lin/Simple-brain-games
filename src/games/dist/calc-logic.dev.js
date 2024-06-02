@@ -25,7 +25,7 @@ var randomUserNumber = function randomUserNumber() {
 
 var questionUser = function questionUser(randomNumber, i) {
   var mathSign = ["+", "-", "*"];
-  console.log("Question: " + randomNumber[0] + mathSign[i] + randomNumber[1]);
+  console.log("Question: " + randomNumber[0] + " " + mathSign[i] + " " + randomNumber[1]);
 };
 
 var calculatingResult = function calculatingResult(i, randomNumbers) {

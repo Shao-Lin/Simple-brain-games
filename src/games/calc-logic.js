@@ -12,7 +12,14 @@ const randomUserNumber = () => {
 
 const questionUser = (randomNumber, i) => {
     const mathSign = ["+", "-", "*"];
-    console.log("Question: " + randomNumber[0] + mathSign[i] + randomNumber[1]);
+    console.log(
+        "Question: " +
+            randomNumber[0] +
+            " " +
+            mathSign[i] +
+            " " +
+            randomNumber[1]
+    );
 };
 
 const calculatingResult = (i, randomNumbers) => {
