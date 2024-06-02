@@ -21,8 +21,9 @@ export const winOrLoseMassage = (userAnswer, rigthAnswer, name) => {
             userAnswer +
                 " is wrong answer ;(. Correct answer was " +
                 rigthAnswer +
-                ". Let`s try again " +
-                name
+                ". Let`s try again, " +
+                name +
+                "!"
         );
         return false;
     }

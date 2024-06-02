@@ -33,7 +33,7 @@ var winOrLoseMassage = function winOrLoseMassage(userAnswer, rigthAnswer, name) 
     console.log("Correct!");
     return true;
   } else {
-    console.log(userAnswer + " is wrong answer ;(. Correct answer was " + rigthAnswer + ". Let`s try again " + name);
+    console.log(userAnswer + " is wrong answer ;(. Correct answer was " + rigthAnswer + ". Let`s try again, " + name + "!");
     return false;
   }
 };
