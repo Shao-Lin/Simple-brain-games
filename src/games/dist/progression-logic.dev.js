@@ -17,7 +17,7 @@ var condition = function condition() {
   console.log("What number is missing in the progression?");
 };
 
-var randomUserNumber = function randomUserNumber() {
+var funcArraySucession = function funcArraySucession() {
   var numberArray = [];
   var lengthBetween = Math.floor(Math.random() * 11);
   var number = Math.floor(Math.random() * 101);
@@ -27,24 +27,25 @@ var randomUserNumber = function randomUserNumber() {
     numberArray.push(number);
   }
 
-  var randomHiddenNumber = Math.floor(Math.random() * 10);
-  numberArray[randomHiddenNumber] = "..";
   return numberArray;
 };
 
-var questionUser = function questionUser(randomNumber) {
-  console.log("Question: ".concat(randomNumber.join(" ")));
+var funcRandomNumber = function funcRandomNumber() {
+  var randomHiddenNumber = Math.floor(Math.random() * 10);
+  return randomHiddenNumber;
 };
 
-var calculateHiddenNumber = function calculateHiddenNumber(arrayRandomNumbers) {
-  var answer;
+var funcSuccessionWithHole = function funcSuccessionWithHole(array, randomNumber) {
+  array[randomNumber] = "..";
+  return array;
+};
 
-  for (var i = 0; i < 2; i++) {
-    if (arrayRandomNumbers[i] !== ".." && arrayRandomNumbers[i + 2] !== "..") {
-      answer = (arrayRandomNumbers[i + 2] - arrayRandomNumbers[i]) / 2;
-    }
-  }
+var questionUser = function questionUser(array) {
+  console.log("Question: ".concat(array.join(" ")));
+};
 
+var calculateHiddenNumber = function calculateHiddenNumber(array, randomNumber) {
+  var answer = array[randomNumber];
   answer = answer.toString();
   return answer;
 };
@@ -54,10 +55,12 @@ var progressionGame = function progressionGame() {
   condition();
 
   for (var i = 0; i < 3; i++) {
-    var randomNumber = randomUserNumber();
-    questionUser(randomNumber);
+    var randomNumberChoiceHole = funcRandomNumber();
+    var arraySucession = funcArraySucession();
+    var rightAns = calculateHiddenNumber(arraySucession, randomNumberChoiceHole);
+    var successionWithHole = funcSuccessionWithHole(arraySucession, randomNumberChoiceHole);
+    questionUser(successionWithHole);
     var answerUser = index.answerUser();
-    var rightAns = calculateHiddenNumber(randomNumber);
 
     if (!index.winOrLoseMassage(answerUser, rightAns, name)) {
       return false;
