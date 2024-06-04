@@ -70,65 +70,43 @@ function _interopRequireWildcard(obj) {
 }
 
 const condition = function condition() {
-  console.log('What number is missing in the progression?');
+  console.log(
+    'Answer "yes" if given number is prime. Otherwise answer "no".',
+  );
 };
 
-const funcArraySucession = function funcArraySucession() {
-  const numberArray = [];
-  const lengthBetween = Math.floor(Math.random() * 11);
-  let number = Math.floor(Math.random() * 101);
-
-  for (let i = 0; i < 10; i++) {
-    number += lengthBetween;
-    numberArray.push(number);
+const primeCheck = function primeCheck(randomNumber) {
+  if (randomNumber <= 1) {
+    return 'no';
   }
 
-  return numberArray;
+  for (let i = 2; i <= Math.sqrt(randomNumber); i++) {
+    if (randomNumber % i === 0) {
+      return 'no';
+    }
+  }
+
+  return 'yes';
 };
 
-const funcRandomNumber = function funcRandomNumber() {
-  const randomHiddenNumber = Math.floor(Math.random() * 10);
-  return randomHiddenNumber;
+const randomUserNumber = function randomUserNumber() {
+  const randomNumber = Math.floor(Math.random() * 101);
+  return randomNumber;
 };
 
-const funcSuccessionWithHole = function funcSuccessionWithHole(
-  array,
-  randomNumber,
-) {
-  array[randomNumber] = '..';
-  return array;
+const questionUser = function questionUser(randomNumber) {
+  console.log(`Question: ${randomNumber}`);
 };
 
-const questionUser = function questionUser(array) {
-  console.log('Question: '.concat(array.join(' ')));
-};
-
-const calculateHiddenNumber = function calculateHiddenNumber(
-  array,
-  randomNumber,
-) {
-  let answer = array[randomNumber];
-  answer = answer.toString();
-  return answer;
-};
-
-const progressionGame = function progressionGame() {
+const primeGame = function primeGame() {
   const name = index.greeting();
   condition();
 
   for (let i = 0; i < 3; i++) {
-    const randomNumberChoiceHole = funcRandomNumber();
-    const arraySucession = funcArraySucession();
-    const rightAns = calculateHiddenNumber(
-      arraySucession,
-      randomNumberChoiceHole,
-    );
-    const successionWithHole = funcSuccessionWithHole(
-      arraySucession,
-      randomNumberChoiceHole,
-    );
-    questionUser(successionWithHole);
+    const randomNumber = randomUserNumber();
+    questionUser(randomNumber);
     const answerUser = index.answerUser();
+    const rightAns = primeCheck(randomNumber);
 
     if (!index.winOrLoseMassage(answerUser, rightAns, name)) {
       return false;
@@ -138,5 +116,5 @@ const progressionGame = function progressionGame() {
   index.congratulations(name);
 };
 
-const _default = progressionGame;
+const _default = primeGame;
 exports.default = _default;
