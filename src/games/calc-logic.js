@@ -13,12 +13,7 @@ const randomUserNumber = () => {
 const questionUser = (randomNumber, i) => {
   const mathSign = ['+', '-', '*'];
   console.log(
-    `Question: ${
-      randomNumber[0]
-    } ${
-      mathSign[i]
-    } ${
-      randomNumber[1]}`,
+    `Question: ${randomNumber[0]} ${mathSign[i]} ${randomNumber[1]}`,
   );
 };
 
@@ -34,7 +29,7 @@ const calculatingResult = (i, randomNumbers) => {
 const calcGame = () => {
   const name = index.greeting();
   condition();
-  for (let i = 0; i < 3; i++) {
+  for (let i = 0; i < 3; i += 1) {
     const randomNumber = randomUserNumber();
     questionUser(randomNumber, i);
     const answerUser = index.answerUser();
@@ -44,5 +39,6 @@ const calcGame = () => {
     }
   }
   index.congratulations(name);
+  return true;
 };
 export default calcGame;
