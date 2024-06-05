@@ -26,7 +26,7 @@ const calculateNod = (randomNumber) => {
 const gcdGame = () => {
   const name = index.greeting();
   condition();
-  for (let i = 0; i < 3; i++) {
+  for (let i = 0; i < 3; i += 1) {
     const randomNumber = randomUserNumber();
     questionUser(randomNumber);
     const answerUser = index.answerUser();
@@ -36,5 +36,6 @@ const gcdGame = () => {
     }
   }
   index.congratulations(name);
+  return true;
 };
 export default gcdGame;

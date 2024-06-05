@@ -21,7 +21,7 @@ const questionUser = (randomNumber) => {
 const evenGame = () => {
   const name = index.greeting();
   condition();
-  for (let i = 0; i < 3; i++) {
+  for (let i = 0; i < 3; i += 1) {
     const randomNumber = randomUserNumber();
     questionUser(randomNumber);
     const answerUser = index.answerUser();
@@ -31,5 +31,6 @@ const evenGame = () => {
     }
   }
   index.congratulations(name);
+  return true;
 };
 export default evenGame;

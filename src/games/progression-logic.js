@@ -7,7 +7,7 @@ const funcArraySucession = () => {
   const numberArray = [];
   const lengthBetween = Math.floor(Math.random() * 11);
   let number = Math.floor(Math.random() * 101);
-  for (let i = 0; i < 10; i++) {
+  for (let i = 0; i < 10; i += 1) {
     number += lengthBetween;
     numberArray.push(number);
   }
@@ -18,8 +18,9 @@ const funcRandomNumber = () => {
   return randomHiddenNumber;
 };
 const funcSuccessionWithHole = (array, randomNumber) => {
-  array[randomNumber] = '..';
-  return array;
+  const newArray = [...array];
+  newArray[randomNumber] = '..';
+  return newArray;
 };
 const questionUser = (array) => {
   console.log(`Question: ${array.join(' ')}`);
@@ -33,7 +34,7 @@ const calculateHiddenNumber = (array, randomNumber) => {
 const progressionGame = () => {
   const name = index.greeting();
   condition();
-  for (let i = 0; i < 3; i++) {
+  for (let i = 0; i < 3; i += 1) {
     const randomNumberChoiceHole = funcRandomNumber();
     const arraySucession = funcArraySucession();
     const rightAns = calculateHiddenNumber(
@@ -53,5 +54,6 @@ const progressionGame = () => {
     }
   }
   index.congratulations(name);
+  return true;
 };
 export default progressionGame;

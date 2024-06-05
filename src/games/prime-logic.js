@@ -10,7 +10,7 @@ const primeCheck = (randomNumber) => {
   if (randomNumber <= 1) {
     return 'no';
   }
-  for (let i = 2; i <= Math.sqrt(randomNumber); i++) {
+  for (let i = 2; i <= Math.sqrt(randomNumber); i += 1) {
     if (randomNumber % i === 0) {
       return 'no';
     }
@@ -28,7 +28,7 @@ const questionUser = (randomNumber) => {
 const primeGame = () => {
   const name = index.greeting();
   condition();
-  for (let i = 0; i < 3; i++) {
+  for (let i = 0; i < 3; i += 1) {
     const randomNumber = randomUserNumber();
     questionUser(randomNumber);
     const answerUser = index.answerUser();
@@ -38,5 +38,6 @@ const primeGame = () => {
     }
   }
   index.congratulations(name);
+  return true;
 };
 export default primeGame;
